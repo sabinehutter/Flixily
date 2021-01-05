@@ -11,12 +11,8 @@ import userAPI from "./utils/userAPI";
 import ProtectedRoute from "./components/ProtectedRoute"
 
 function App() {
+	
 	const [userState, setUserState] = useState({});
-
-   useEffect(() => { 
-	   // auth user on first render
-      authenticate() 
-   }, []);
 
 	//user authentication
 	function authenticate() {
