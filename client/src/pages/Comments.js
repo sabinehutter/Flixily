@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Col, Row } from "../components/Grid";
 import { Table, Tr, Td } from "../components/Table";
 import { ForwardRefInput, FormBtn } from "../components/Form";
+import Swiping from "../pages/Swiping"
 
 function Comments({ username }) {
 	// Setting our component's initial state
@@ -82,6 +83,10 @@ function Comments({ username }) {
 						onClick={handleFormSubmit}>
 						Submit Comment
 					</FormBtn>
+					
+              <FormBtn>
+                Swiping
+              </FormBtn>
 				</form>
 			</Col>
 		</Row>,
