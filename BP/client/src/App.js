@@ -9,7 +9,8 @@ import NoMatch from "./pages/NoMatch";
 import Head from "./components/Head";
 import userAPI from "./utils/userAPI";
 import ProtectedRoute from "./components/ProtectedRoute";
-import Explore from "./pages/Explore";
+import Explorer from "./pages/Explore";
+import User from "./pages/User";
 
 function App() {
 	
@@ -30,11 +31,40 @@ function App() {
 			<Header />
 			<Router >
 				<Switch>
-					<Route exact path="/" component={Login}/>
-					<Route exact path="/signup" component={Signup} />
-					<Route exact path="/explore" compenent={Explore} />
+					<Route
+						exact path='/'
+						render={ props => (
+							<Login
+								{...props}
+								userState={userState}
+								setUserState={setUserState}
+							/>
+						)}
+					/>
+
+					<Route
+						exact path='/signup'
+						render={ props => (
+							<Signup
+								{...props}
+								authenticate={authenticate}
+								user={userState}
+							/>
+						)}
+					/>
+
+					<ProtectedRoute exact path="/explore"> 
+						<Explorer {...userState} />
+					</ProtectedRoute>
+
+					<ProtectedRoute exact path="/user" >
+						<User {...userState} />
+					</ProtectedRoute>
+
+					<Route component={NoMatch} />
 
 				</Switch>
+				{ userState.email ? <Redirect to="/comments" /> : <></>}
 			</Router>
 			<Footer />
 		</>
