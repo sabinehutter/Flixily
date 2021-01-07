@@ -8,13 +8,13 @@ import API from "../utils/API";
 
 function User() {
   const [user, setUser] = useState({})
-  // When this component mounts, grab the comment with the _id of props.match.params.id
-  // e.g. localhost:3000/comments/599dcb67f0f16317844583fc
-  const match = useRouteMatch('/comments/:id');
+  // When this component mounts, grab the user with the _id of props.match.params.id
+  // e.g. localhost:3000/users/599dcb67f0f16317844583fc
+  const match = useRouteMatch('/users/:id');
    
   useEffect(() => {
-    API.getComment(match.params.id)
-      .then(res => setComment(res.data))
+    API.getUser(match.params.id)
+      .then(res => setUser(res.data))
       .catch(err => console.log(err));
   }, [match.params.id])
 
@@ -23,15 +23,15 @@ function User() {
         <Row>
           <Col size="md-10 md-offset-1">
             <article>
-               <Card heading={comment.username}>
-                  {comment.body}
+               <Card heading={user.username}>
+                  {user.body}
                </Card>
             </article>
           </Col>
         </Row>
         <Row>
           <Col size="md-2">
-            <Link className="text-dark" to="/comments">← Back to all comments</Link>
+            <Link className="text-dark" to="/users">← Back to all users</Link>
           </Col>
         </Row>
       </Container>
@@ -39,4 +39,4 @@ function User() {
   }
 
 
-export default Comment;
+export default User;

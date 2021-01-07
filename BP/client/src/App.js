@@ -28,7 +28,7 @@ function App() {
 
 	return (
 		<>
-			<Header />
+			<Head />
 			<Router >
 				<Switch>
 					<Route
@@ -66,7 +66,7 @@ function App() {
 				</Switch>
 				{ userState.email ? <Redirect to="/comments" /> : <></>}
 			</Router>
-			<Footer />
+			{/* <Foot /> */}
 		</>
 
 		// // // // // // // // // <Router>
