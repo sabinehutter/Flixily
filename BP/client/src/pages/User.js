@@ -6,8 +6,8 @@ import API from "../utils/API";
 
 // RENDER USER INFO
 
-function Comment() {
-  const [comment, setComment] = useState({})
+function User() {
+  const [user, setUser] = useState({})
   // When this component mounts, grab the comment with the _id of props.match.params.id
   // e.g. localhost:3000/comments/599dcb67f0f16317844583fc
   const match = useRouteMatch('/comments/:id');
