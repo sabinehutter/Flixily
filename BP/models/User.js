@@ -4,6 +4,12 @@ const bcrypt = require('bcrypt');
 // ADD IN ID
 
 const UserSchema = new mongoose.Schema({
+  id: {
+    type: String,
+    unique: true,
+    required: true,
+    trim: true
+  },
   email: {
     type: String,
     unique: true,
@@ -19,12 +25,12 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  comments: [
-   {
-     type: mongoose.Types.ObjectId,
-     ref: "Comment"
-   }
- ]
+//   comments: [
+//    {
+//      type: mongoose.Types.ObjectId,
+//      ref: "Comment"
+//    }
+//  ]
   // ..anything else you want on your user
 });
 
