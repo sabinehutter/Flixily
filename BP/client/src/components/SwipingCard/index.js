@@ -1,3 +1,6 @@
+import React from "react";
+import { Route, Redirect } from "react-router-dom";
+
 function SwipingCard () {
   // const FlippyStyle = {
   //   width: '50%',
