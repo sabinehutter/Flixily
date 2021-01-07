@@ -50,8 +50,40 @@ db.User.create(userSeed)
    {db.Movie.create(movieSeed)}
    );
 
+//added by Jennifer for below
 
+   db.User.deleteMany({})
+  .then(() => db.comment.collection.insertMany(UserSeed))
+  .then(data => {
+    console.log(data.result.n + " user inserted!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
 
+  db.Comment.deleteMany({})
+  .then(() => db.comment.collection.insertMany(CommentSeed))
+  .then(data => {
+    console.log(data.result.n + " comment inserted!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+
+  db.Workout.deleteMany({})
+  .then(() => db.comment.collection.insertMany(MovieSeed))
+  .then(data => {
+    console.log(data.result.n + " movie inserted!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
 
 // FROM BOILERPLATE
 // // remove all comments
