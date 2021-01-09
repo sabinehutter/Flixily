@@ -4,11 +4,11 @@ const bcrypt = require('bcrypt');
 // ADD IN ID
 
 const UserSchema = new mongoose.Schema({
-  // id: {
-  //   type: String,
-  //   unique: true,
-  //   trim: true
-  // },
+  id: {
+    type: String,
+    unique: true,
+    trim: true
+  },
   email: {
     type: String,
     unique: true,
