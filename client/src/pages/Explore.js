@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useRouteMatch } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import Card from "../components/Card";
-import API from "../utils/OLDAPI";
+import API from "../utils/API";
 import ReactCardFlip from 'react-card-flip';
 
 import SwipingCard from "../components/SwipingCard"
