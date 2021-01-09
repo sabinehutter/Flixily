@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
 
 // CREATE THE MOVIE SCHEMA BASED ON SEEDDB.JS
 
@@ -13,7 +12,7 @@ const Schema = mongoose.Schema;
 // const User = mongoose.model('Comment', UserSchema);
 
 //Movie Schema Added by Jennifer for below
-const movieSchema = new Schema({
+const movieSchema = new mongoose.Schema({
 	id: {
 		type: Number,
 		unique: true,
@@ -21,7 +20,7 @@ const movieSchema = new Schema({
 		trim: true, 
 		autoIndex: true
 	  },
-	  userId: {
+	userId: {
 		type: Number,
 		required: true,
 		trim: true
@@ -47,13 +46,11 @@ const movieSchema = new Schema({
     unique: true,
     required: true,
     trim: true
-  },
+  }
 });
 
-const Movie = new mongoose.Schema(
-"Movie", movieSchema
-);
+const Movies = new mongoose.model('Movies', movieSchema);
 
-module.exports = Movie;
+module.exports = Movies;
 
 
