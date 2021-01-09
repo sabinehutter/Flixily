@@ -10,13 +10,11 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/flixily",
 
 const userSeed = [
    {
-      id: 1,
       username: "Admin",
       email: "admin@contact.us",
       password: "1"
    }, 
    {
-      id: 1,
       username: "Admin2",
       email: "admin2@contact.us",
       password: "2"
@@ -44,27 +42,15 @@ const movieSeed = [
 ];
 
 
-
 db.User.create(userSeed)
 .then(() => 
    {db.Movie.create(movieSeed)}
    );
 
-//added by Jennifer for below
 
-//    db.Movie.deleteMany({})
-//   .then(() => db.Movie.collection.insertMany(MovieSeed))
-//   .then(data => {
-//     console.log(data.result.n + " user inserted!");
-//     process.exit(0);
-//   })
-//   .catch(err => {
-//     console.error(err);
-//     process.exit(1);
-//   });
-
-  db.Movie.deleteMany({})
+db.Movie.deleteMany({})
   .then(() => db.Movie.collection.insertMany(movieSeed))
+  .then(() => db.User.collection.insertMany(userSeed))
   .then(data => {
     console.log(data.result.n + " Movie inserted!");
     process.exit(0);

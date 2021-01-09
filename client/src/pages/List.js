@@ -99,7 +99,7 @@ function Comments({ username }) {
 							<Tr key={comment._id}>
 								<Td>
 									<Link
-										to={"/comments/" + comment._id}
+										to={"/explore/" + comment._id}
 										style={{ textAlign: "left", display: "block" }}>
 										<strong>{comment.username}:</strong> {comment.body}
 									</Link>
