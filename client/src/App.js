@@ -64,7 +64,7 @@ function App() {
 					<Route component={NoMatch} />
 
 				</Switch>
-				{ userState.email ? <Redirect to="/comments" /> : <></>}
+				{ userState.email ? <Redirect to="/explore" /> : <></>}
 			</Router>
 			{/* <Foot /> */}
 		</>
@@ -95,16 +95,16 @@ function App() {
 		// // // // // // // // // 					/>
 		// // // // // // // // // 				)}
 		// // // // // // // // // 			/>
-        // // // // // // // // //        <ProtectedRoute exact path={["/", "/comments"]}>
+        // // // // // // // // //        <ProtectedRoute exact path={["/", "/explore"]}>
         // // // // // // // // //           <Comments {...userState} />
         // // // // // // // // //        </ProtectedRoute>
-        // // // // // // // // //        <ProtectedRoute exact path='/comments/:id' >
+        // // // // // // // // //        <ProtectedRoute exact path='/explore/:id' >
         // // // // // // // // //           <Comment {...userState} />
         // // // // // // // // //        </ProtectedRoute>
 		// // // // // // // // // 			<Route component={NoMatch} />
 		// // // // // // // // // 		</Switch>
 		// // // // // // // // // 	</Container>
-        // // // // // // // // //  { userState.email ? <Redirect to="/comments" /> : <></>}
+        // // // // // // // // //  { userState.email ? <Redirect to="/explore" /> : <></>}
 		// // // // // // // // // </Router>
 	);
 }
