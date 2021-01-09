@@ -23,7 +23,7 @@ const userSeed = [
    }
 ];
 
-const movieSeeds = [
+const movieSeed = [
    {
       id: 1,
       movieId: "1237890sdfhio",
@@ -52,32 +52,21 @@ db.User.create(userSeed)
 
 //added by Jennifer for below
 
-   db.User.deleteMany({})
-  .then(() => db.comment.collection.insertMany(UserSeed))
-  .then(data => {
-    console.log(data.result.n + " user inserted!");
-    process.exit(0);
-  })
-  .catch(err => {
-    console.error(err);
-    process.exit(1);
-  });
+//    db.Movie.deleteMany({})
+//   .then(() => db.Movie.collection.insertMany(MovieSeed))
+//   .then(data => {
+//     console.log(data.result.n + " user inserted!");
+//     process.exit(0);
+//   })
+//   .catch(err => {
+//     console.error(err);
+//     process.exit(1);
+//   });
 
-  db.Comment.deleteMany({})
-  .then(() => db.comment.collection.insertMany(CommentSeed))
+  db.Movie.deleteMany({})
+  .then(() => db.Movie.collection.insertMany(movieSeed))
   .then(data => {
-    console.log(data.result.n + " comment inserted!");
-    process.exit(0);
-  })
-  .catch(err => {
-    console.error(err);
-    process.exit(1);
-  });
-
-  db.Workout.deleteMany({})
-  .then(() => db.comment.collection.insertMany(MovieSeed))
-  .then(data => {
-    console.log(data.result.n + " movie inserted!");
+    console.log(data.result.n + " Movie inserted!");
     process.exit(0);
   })
   .catch(err => {
@@ -86,20 +75,20 @@ db.User.create(userSeed)
   });
 
 // FROM BOILERPLATE
-// // remove all comments
-// db.Comment.deleteMany({})
+// // remove all Movies
+// db.Movie.deleteMany({})
 // // remove all users
 //   .then(() => db.User.deleteMany({}))
 //   // add user
 //   .then(() => db.User.create(userSeed))
-//   // add comments seeds
-//   .then((user) => db.Comment.create(commentsSeeds[0])
-//       // add comment ref to user
-//       .then(({_id}) => db.User.findOneAndUpdate({_id: user._id}, { $push: { comments: _id } }, { new: true }))
+//   // add Movies seeds
+//   .then((user) => db.Movie.create(MoviesSeeds[0])
+//       // add Movie ref to user
+//       .then(({_id}) => db.User.findOneAndUpdate({_id: user._id}, { $push: { Movies: _id } }, { new: true }))
 //   )
-//   .then((user) => db.Comment.create(commentsSeeds[1])
-//       // add comment ref to user
-//       .then(({_id}) => db.User.findOneAndUpdate({_id: user._id}, { $push: { comments: _id } }, { new: true }))
+//   .then((user) => db.Movie.create(MoviesSeeds[1])
+//       // add Movie ref to user
+//       .then(({_id}) => db.User.findOneAndUpdate({_id: user._id}, { $push: { Movies: _id } }, { new: true }))
 //   )
 //   .then(() => {
 //     process.exit(0);
