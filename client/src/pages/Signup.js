@@ -24,8 +24,10 @@ class Signup extends Component {
   };
 
   handleFormSubmit = event => {
+    console.log("handleformsubmit");
     event.preventDefault();
     if (this.state.email && this.state.password) {
+      console.log(this.state)
       userAPI.signup({
         username: this.state.username,
         email: this.state.email,
@@ -34,12 +36,17 @@ class Signup extends Component {
 
       })
         .then(res => {
+          console.log("handlesubmit.then");
           if(res.status === 200 ){
             this.props.authenticate();
-            return <Redirect to="/comments" />
+            return <Redirect to="/explore" />
           }
         })
-        .catch(err => console.log(err.response.data));
+        .catch(err => {
+          console.log(".catch");
+          console.log(err.response.data)}
+          );
+        
     }
   };
 
@@ -91,7 +98,7 @@ class Signup extends Component {
           
         </Row>
         {/* redirect on authenticated */}
-        {this.props.authenticated ? <Redirect to='/comments'/>: <div></div>}
+        {this.props.authenticated ? <Redirect to='/explore'/>: <div></div>}
 
 
       </Container>
