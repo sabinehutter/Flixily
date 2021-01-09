@@ -20,14 +20,7 @@ function Explore() {
 
   return (
     <>
-      {/* <NavBar /> */}
-      <Router>
-      <Switch>
-        <Route exact path = "/user"  component= {User}/> 
-       
-      </Switch>
-      </Router>
-      {/* <SwipingCard /> */}
+      <SwipingCard />
     </>
     );
   }
