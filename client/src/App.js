@@ -58,25 +58,19 @@ function App() {
 						<Explorer {...userState} />
 					</ProtectedRoute>
 
-					{/* <ProtectedRoute exact path={"/explore/favorites"}>
-						<Favorites {...userState} />
-					</ProtectedRoute>  */}
-
-					{/* <ProtectedRoute exact path="/favorites" >
+					<ProtectedRoute exact path="/favorites" >
 						<Favorites {...userState} />
 					</ProtectedRoute>
  
 					<ProtectedRoute exact path="/user" >
 						<User {...userState} />
-					</ProtectedRoute>  */}
+					</ProtectedRoute> 
 
 					<Route component={NoMatch} />
 
 				</Switch>
-				{/* </Container> */}
 				{userState.email ? <Redirect to="/explore" /> : <></>}
 			</Router>
-			{/* <Foot /> */}
 		</>
 
 		// // // // // // // // // <Router>
