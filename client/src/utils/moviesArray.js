@@ -1228,7 +1228,5 @@ function randomMovie () {
     return moviesArray[i];
 }
 
-randomMovie();
-
 
 export default randomMovie;

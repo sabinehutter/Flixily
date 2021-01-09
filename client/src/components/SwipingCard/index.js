@@ -1,7 +1,36 @@
-import React from "react";
-import { Route, Redirect } from "react-router-dom";
+import React, { Component } from "react";
 
-function SwipingCard () {
+import { Route, Redirect } from "react-router-dom";
+import API from "../../utils/API";
+
+const style = {width: "300px"}
+
+
+class SwipingCard extends Component {
+  state = {
+    id: '',
+    title: '',
+    image: '',
+    plot: '',
+  }
+
+  componentDidMount() {
+    this.getMovie()
+  };
+
+  getMovie = () => {
+    API.getRandomMovie()
+    .then( res => {
+      console.log(res)
+      this.setState({
+        id: res.data.imdbID,
+        title: res.data.Title,
+        image: res.data.Poster,
+        plot: res.data.Plot,
+      })
+    });
+  };
+
   // const FlippyStyle = {
   //   width: '50%',
   //   height: '85%',
@@ -83,10 +112,18 @@ function SwipingCard () {
   //     }, 3000);
   //   }
   
-    
+    render () {
       return (
         <div>
-          "Swiping card here"
+          <div className="card" style={style}>
+            <img className="card-img-top" src={this.state.image} alt={this.state.title} />
+            <div className="card-body">
+                <h5 className="card-title">{this.state.title}</h5>
+                <p className="card-text">{this.state.plot}</p>
+                <a href="#" className="btn btn-primary">Eh?</a>
+            </div>
+          </div>
+
         </div>
         // <div className="App">
         //     <div style = {{display: "inline-block"}}>
@@ -112,5 +149,7 @@ function SwipingCard () {
         //   </div>
       );
     };
+
+};
 
 export default SwipingCard;
