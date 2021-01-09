@@ -8,8 +8,7 @@ module.exports = {
       res.json({
          _id: req.user._id,
          username: req.user.username,
-         email: req.user.email,
-         comments: req.user.comments
+         email: req.user.email
       });
    },
 
@@ -17,6 +16,7 @@ module.exports = {
 	// how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
 	// otherwise send back an error
    signup: function (req, res) {
+      console.log(req);
 		db.User.create({
          username: req.body.username,
 			email: req.body.email,
