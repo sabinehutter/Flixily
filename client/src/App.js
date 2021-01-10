@@ -27,9 +27,10 @@ function App() {
 
 	return (
 		<>
-			<Head />
+			
 
 			<Router >
+			<Head user={userState}/>
 				{/* <Container> */}
 				<Switch>
 					<Route
@@ -54,8 +55,8 @@ function App() {
 						)}
 					/>
 
-					<ProtectedRoute exact path={"/explore"}>
-						<Explorer {...userState} />
+					<ProtectedRoute exact path={"/explore"} {...userState} >
+						<Explorer  {...userState}/>
 					</ProtectedRoute>
 
 					<ProtectedRoute exact path="/favorites" >
