@@ -2,8 +2,9 @@ import React, { Component } from "react";
 
 import { Route, Redirect } from "react-router-dom";
 import API from "../../utils/API";
+import Flippy, { FrontSide, BackSide } from 'react-flippy';
 
-const style = {width: "300px"}
+const style = { width: "300px" }
 
 
 class SwipingCard extends Component {
@@ -20,135 +21,53 @@ class SwipingCard extends Component {
 
   getMovie = () => {
     API.getRandomMovie()
-    .then( res => {
-      console.log(res)
-      this.setState({
-        id: res.data.imdbID,
-        title: res.data.Title,
-        image: res.data.Poster,
-        plot: res.data.Plot,
-      })
-    });
+      .then(res => {
+        console.log(res)
+        this.setState({
+          id: res.data.imdbID,
+          title: res.data.Title,
+          image: res.data.Poster,
+          plot: res.data.Plot,
+        })
+      });
   };
 
-  // const FlippyStyle = {
-  //   width: '50%',
-  //   height: '85%',
-  //   textAlign: 'center',
-  //   color: '#FFF',
-  //   fontFamily: 'sans-serif',
-  //   fontSize: '30px',
-  //   justifyContent: 'center',
-  //   display: 'inline-block'
-  // }
-  
-  
-  // const DefaultCardContents = ({ children }) => (
-  //   <React.Fragment>
-  //     <FrontSide
-  //       style={{
-  //         backgroundColor: '#41669d',
-  //         display: 'flex',
-  //         alignItems: 'center',
-  //         flexDirection: 'column', 
-  //         top : '10px'
-  //       }}
-  //     >
-  //       <img
-  //         src={Rick}
-  //         style={{ maxWidth: '100%', maxHeight: '100%', paddingTop: "40px" }}
-  //       />
-  //       Godfather
-  //       <span 
-  //         style={{
-  //           fontSize:'12px',
-  //           position: 'absolute',
-  //           bottom: '10px',
-  //           width: '100%',
-  //           top: "10px"
-  //         }}>
-  //         {children}<br />
-  //         (FRONT SIDE)
-  //       </span>
-  //     </FrontSide>
-  //     <BackSide
-  //       style={{
-  //         backgroundColor: '#175852',
-  //         display: 'flex',
-  //         alignItems: 'center',
-  //         justifyContent: 'center',
-  //         flexDirection: 'column'
-  //       }}>
-  //       ROCKS
-  //       <span 
-  //         style={{
-  //           fontSize:'12px',
-  //           position: 'absolute',
-  //           bottom: '10px',
-  //           width: '100%'
-  //         }}>
-  //         {children}<br />
-  //         (BACK SIDE)
-  //       </span>
-  //     </BackSide>
-  //   </React.Fragment>);
-  
-  // class App extends Component {
-  //   constructor(props) {
-  //     super(props);
-  //     this.state = {
-  //       isFlipped: false
-  //     };
-  
-  //     function handleClick(e){
-  //       e.preventDefault();
-  //       console.log('The link was clicked.');
-  //     }
-  
-  //     setInterval(() => {
-  //       this.setState({
-  //         isFlipped: !this.state.isFlipped
-  //       });
-  //     }, 3000);
-  //   }
-  
-    render () {
-      return (
-        <div>
-          <div className="card" style={style}>
-            <img className="card-img-top" src={this.state.image} alt={this.state.title} />
-            <div className="card-body">
-                <h5 className="card-title">{this.state.title}</h5>
-                <p className="card-text">{this.state.plot}</p>
-                <a href="#" className="btn btn-primary">Eh?</a>
-            </div>
-          </div>
+  render() {
+    return (
+      <div>
 
-        </div>
-        // <div className="App">
-        //     <div style = {{display: "inline-block"}}>
-        //       {/* <a onClick={ handleClick}> */}
-        //     <img src={Like} style = {{width: "150px", height: "150px", display: "inline-block", paddingBottom: "200px", marginRight: "40px"}} alt="Logo" />
-        //     {/* </a> */}
-        //     </div>
-        //       <Flippy
-        //         ref={(r) => this.flippyHorizontal = r}
-        //         flipOnClick={false}
-        //         style={FlippyStyle}
-        //       >
-        //       <DefaultCardContents>
-        //         I flip horizontally with an event<br />
-        //         <button type="button" onClick={() => this.flippyHorizontal.toggle()}>See Movie Info!</button>
-        //       </DefaultCardContents>
-        //     </Flippy>
-        //     <div style = {{display: "inline-block"}}>
-        //       {/* <a onClick={handleClick}> */}
-        //     <img src={Dislike} style = {{width: "150px", height: "150px", display: "inline-block", paddingBottom: "200px", marginLeft: "40px"}} alt="Logo" />
-        //     {/* </a> */}
-        //     </div>
-        //   </div>
-      );
-    };
+        <Flippy
+          flipOnHover={false} 
+          flipOnClick={true} 
+          flipDirection="horizontal" 
+          ref={(r) => this.flippy = r} 
+
+          style={{ height: '70%', width: '30%', margin: '0 auto', float : "none" }} /// these are optional style, it is not necessary
+        >
+          <FrontSide
+            style={{
+              backgroundColor: '#41669d',
+            }}
+          >
+            <img src={this.state.image} alt={this.state.title} style = {{margin: '0 auto', float : "none", display: "block"}} />
+            <div className="card-body">
+            <h5 className="card-title display-4" style = {{textAlign: 'center'}}>{this.state.title}</h5>
+            </div>
+    </FrontSide>
+          <BackSide
+            style={{ backgroundColor: '#175852' }}>
+            <div className="card-body">
+            <h5 className="card-title">{this.state.title}</h5>
+            <p className="card-text">{this.state.plot}</p>
+            <a href="#" className="btn btn-primary">Eh?</a>
+          </div>
+    </BackSide>
+        </Flippy>
+        
+
+      </div>
+    );
+  };
 
 };
 
