@@ -12,6 +12,9 @@ function Explore() {
   return (
     <>
       <SwipingCard />
+      <div>
+        HELLO
+      </div>
     </>
     );
   }
