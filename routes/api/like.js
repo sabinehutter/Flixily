@@ -1,13 +1,11 @@
 const router = require("express").Router();
-const commentsController = require("../../controllers/movieController");
+const movieController = require("../../controllers/movieController");
 
-// send the movie id, title, image, and user id to our movies collection
+// update a movie record with the user rating for the movie
 
-// Matches with "/api/explore"
-router.route("/like")
-//   .get(commentsController.findAll)
-//   .post(commentsController.create);
+// Matches with "/api/like/"
+router.route("/")
+  .post(movieController.create);
 
-// Matches with "/api/explore/:id"
 
 module.exports = router;
