@@ -1,18 +1,33 @@
-import React, { useEffect, useState } from "react";
+import React, { Component } from "react";
 import API from "../utils/API";
-import { Link, useRouteMatch, Switch, Router, Route } from "react-router-dom";
 import User from "./User";
 
 import NavBar from "../components/NavBar"
+import { restart } from "nodemon";
 
+class ProfileCard extends Component {
+  state = {
+    id: '',
+    username: '',
+  }
 
-function Profile() {
+componentDidMount() {
+  this.getUser()
+};
 
+getUser = () => {
+  API.getUserInfo()
+    .then(res =>
+      console.log(res)
+      this.setState({ 
+        id: res.data.id,
+        username: res.data.username,
+      })
+    });
+};
+
+render() {
   return (
-    //return inputs here from the user details
-        // in the pages file we are importing components that will be used to render the page
-          // we then import the page into the app.js file to combine everything together
-            // the index.js file then renders the app with all of its pages and components using the reactDom.render method
     
 
       <div>
@@ -26,4 +41,4 @@ function Profile() {
   }
 
 
-export default Profile;
+export default ProfileCard;
