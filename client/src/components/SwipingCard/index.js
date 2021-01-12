@@ -3,8 +3,13 @@ import React, { Component } from "react";
 import { Route, Redirect } from "react-router-dom";
 import API from "../../utils/API";
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
+import Cards, { Card } from 'react-swipe-card'
 
 const style = { width: "300px" }
+
+const action = (action) => {
+  console.log('action', action);
+  };
 
 
 class SwipingCard extends Component {
@@ -32,8 +37,11 @@ class SwipingCard extends Component {
       });
   };
 
+  
+
   render() {
     return (
+
       <div>
 
         <Flippy
@@ -63,12 +71,11 @@ class SwipingCard extends Component {
           </div>
     </BackSide>
         </Flippy>
-        
-
-      </div>
+        </div>
     );
   };
 
 };
 
 export default SwipingCard;
+
