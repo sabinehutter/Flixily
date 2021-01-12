@@ -37,7 +37,18 @@ class SwipingCard extends Component {
       });
   };
 
-  
+  likeMovie = () => {
+    console.log("you liked" + this.state.title);
+    API.likeMovie(this.state)
+      .then(() => this.getMovie())
+      .catch(err => console.log(err))
+  };
+
+  dislikeMovie = () => {
+    console.log("you disliked" + this.state.title);
+    this.getMovie()
+  };
+
 
   render() {
     return (
@@ -67,11 +78,18 @@ class SwipingCard extends Component {
             <div className="card-body">
             <h5 className="card-title">{this.state.title}</h5>
             <p className="card-text">{this.state.plot}</p>
-            <a href="#" className="btn btn-primary">Eh?</a>
+            
+
           </div>
     </BackSide>
         </Flippy>
+
+        <button className="btn btn-primary" onClick={ () => {this.likeMovie()} }>CHECK</button>
+        <button className="btn btn-primary" onClick={ () => {this.dislikeMovie()} }>X</button>
+
+      </div>
         </div>
+
     );
   };
 
