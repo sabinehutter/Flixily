@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import DeleteBtn from "../components/DeleteBtn";
-import API from "../utils/OLDAPI";
+import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row } from "../components/Grid";
 import { Table, Tr, Td } from "../components/Table";
@@ -8,69 +8,69 @@ import { ForwardRefInput, FormBtn } from "../components/Form";
 
 // WHERE WE RENDER LIKED MOVIES FOR THAT USER
 
-function Comments({ username }) {
+function SavedMovies({ userID }) {
 	// Setting our component's initial state
-	const [comments, setComments] = useState([]);
-	const [formObject, setFormObject] = useState({
-      body: "",
-      username: ""
-   });
+	const [movies, setMovies] = useState([]);
+// // // // // // // // // 	const [formObject, setFormObject] = useState({
+// // // // // // // // //       body: "",
+// // // // // // // // //       username: ""
+// // // // // // // // //    });
    
-   // get input element ref for focus
-   const titleInputElRef = useRef();
+// // // // // // // // //    // get input element ref for focus
+// // // // // // // // //    const titleInputElRef = useRef();
 
-	// Load all comments and store them with setComments
-	useEffect(() => {
-      // set user after successful component mount
-      setFormObject({
-         body: "",
-         username: "", 
-         username})
+// // // // // // // // // 	// Load all comments and store them with setComments
+// // // // // // // // // 	useEffect(() => {
+// // // // // // // // //       // set user after successful component mount
+// // // // // // // // //       setFormObject({
+// // // // // // // // //          body: "",
+// // // // // // // // //          username: "", 
+// // // // // // // // //          username})
 
-      loadComments();
+// // // // // // // // //       loadComments();
 
-      // focus on titleInputEl if ref exists
-      titleInputElRef.current.focus()
-   }, [username]);
+// // // // // // // // //       // focus on titleInputEl if ref exists
+// // // // // // // // //       titleInputElRef.current.focus()
+// // // // // // // // //    }, [username]);
    
 
 	// Loads all comments and sets them to comments
-	function loadComments() {
-		API.getComments()
-			.then((res) => setComments(res.data))
+	function loadMovies() {
+		API.getMovies()
+			.then((res) => setMovies(res.data))
 			.catch((err) => console.log(err));
 	}
 
 	// Deletes a comment from the database with a given id, then reloads comments from the db
-	function deleteComment(id) {
-		API.deleteComment(id)
-			.then((res) => loadComments())
+	function rateMovie(id) {
+		API.rateMovie(id)
+			.then((res) => loadMovies())
 			.catch((err) => console.log(err));
 	}
 
-	// Handles updating component state when the user types into the input field
-	function handleInputChange(event) {
-		const { name, value } = event.target;
-		setFormObject({ ...formObject, [name]: value });
-	}
+	// // // // // // // // // Handles updating component state when the user types into the input field
+	// // // // // // // // function handleInputChange(event) {
+	// // // // // // // // 	const { name, value } = event.target;
+	// // // // // // // // 	setFormObject({ ...formObject, [name]: value });
+	// // // // // // // // }
 
-	// When the form is submitted, use the API.saveComment method to save the comment data
-	// Then reload comments from the database
-	function handleFormSubmit(event) {
-		event.preventDefault();
-		if (formObject.body) {
-			API.saveComment({
-				body: formObject.body,
-				username: formObject.username,
-			})
-            .then(loadComments)
-            .then(() => setFormObject({
-               body: "",
-               username: ""
-            }))
-				.catch((err) => console.log(err));
-		}
-	}
+	// // // // // // // // // When the form is submitted, use the API.saveComment method to save the comment data
+	// // // // // // // // // Then reload comments from the database
+	// // // // // // // // function handleFormSubmit(event) {
+	// // // // // // // // 	event.preventDefault();
+	// // // // // // // // 	if (formObject.body) {
+	// // // // // // // // 		API.saveComment({
+	// // // // // // // // 			body: formObject.body,
+	// // // // // // // // 			username: formObject.username,
+	// // // // // // // // 		})
+    // // // // // // // //         .then(loadComments)
+    // // // // // // // //         .then(() => setFormObject({
+    // // // // // // // //            body: "",
+    // // // // // // // //            username: ""
+    // // // // // // // //         }))
+	// // // // // // // // 			.catch((err) => console.log(err));
+	// // // // // // // // 	}
+	// // // // // // // // }
 
 	return <>
 		<Row>
