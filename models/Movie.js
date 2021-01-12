@@ -16,7 +16,6 @@ const movieSchema = new mongoose.Schema({
 	id: {
 		type: Number,
 		unique: true,
-		required: true,
 		trim: true, 
 		autoIndex: true
 	  },
