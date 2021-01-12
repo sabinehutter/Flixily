@@ -3,7 +3,7 @@ import { Link, useRouteMatch, Switch, Router, Route } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import Card from "../components/Card";
 import API from "../utils/API";
-import ReactCardFlip from 'react-card-flip';
+import Example from "../components/SwipeExample"
 
 import NavBar from "../components/NavBar"
 
