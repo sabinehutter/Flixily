@@ -23,7 +23,6 @@ const userSeed = [
 
 const movieSeed = [
    {
-      id: 1,
       movieId: "1237890sdfhio",
       title: "The Godfather",
       img: "URL",
@@ -31,9 +30,8 @@ const movieSeed = [
       rating: 4
    },
    {
-      id: 1,
       movieId: "1237890sdfhio",
-      title: "The Godfather",
+      title: "The Godmother",
       img: "URL",
       userId: 2,
       rating: 3
@@ -48,8 +46,9 @@ db.User.create(userSeed)
    );
 
 
-db.Movie.deleteMany({})
-  .then(() => db.Movie.collection.insertMany(movieSeed))
+db.Movies.deleteMany({})
+   .then(() => db.User.deleteMany({}))
+  .then(() => db.Movies.collection.insertMany(movieSeed))
   .then(() => db.User.collection.insertMany(userSeed))
   .then(data => {
     console.log(data.result.n + " Movie inserted!");
