@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { Row, Container } from "../components/Grid";
-import { MovieList, MovieListItem } from "../components/MovieList";
+// import { MovieList, MovieListItem } from "../components/MovieList";
+import API from "../utils/API";
+
+
+
 // import API from "../utils/API";
 class Saved extends Component {
   state = {
@@ -38,7 +42,7 @@ class Saved extends Component {
         <Row>
           <div className="col border border-rounded p-3 mb-4">
             <h4>Your Favorites Movies</h4>
-            {!this.state.savedMovies.length ? (
+            {/* {!this.state.savedMovies.length ? (
               <h6 className="text-center">No movies Liked to display</h6>
             ) : (
                 <MovieList>
@@ -49,7 +53,7 @@ class Saved extends Component {
                         googleId={book.movieId}
                         title={movie.title}
                         director={movie.director}
-                        description={book.description}
+                        description={movie.description}
                         thumbnail={movie.thumbnail}
                         href={movie.href}
                         // WHICH API?
@@ -61,11 +65,11 @@ class Saved extends Component {
                     );
                   })}
                 </MovieList>
-              )}
+              )} */}
           </div>
         </Row>
       </Container>
     )
   }
 }
-export default Favorites;
+export default Saved;
