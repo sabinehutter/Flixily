@@ -27,8 +27,7 @@ function User() {
                <ProfileCard 
                heading={user.username}
                id={user._id}
-               email={user.email}
-               comment={user.comments}>
+               email={user.email}>
                </ProfileCard>
             </article>
           </Col>
