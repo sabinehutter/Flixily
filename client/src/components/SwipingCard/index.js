@@ -88,7 +88,7 @@ class SwipingCard extends Component {
         <button className="btn btn-primary" onClick={ () => {this.dislikeMovie()} }>X</button>
 
       </div>
-        </div>
+        
 
     );
   };
