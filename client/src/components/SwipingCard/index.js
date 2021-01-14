@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-
-import { Route, Redirect } from "react-router-dom";
 import API from "../../utils/API";
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
+import { Route, Redirect } from "react-router-dom";
+import { Card, CardWrapper } from 'react-swipeable-cards';
 
 const style = { width: "300px" }
 
@@ -35,7 +35,9 @@ class SwipingCard extends Component {
   render() {
     return (
       <div>
-
+         <CardWrapper>
+          
+        <Card>
         <Flippy
           flipOnHover={false} 
           flipOnClick={true} 
@@ -63,8 +65,8 @@ class SwipingCard extends Component {
           </div>
     </BackSide>
         </Flippy>
-        
-
+        </Card>
+        </CardWrapper >
       </div>
     );
   };
