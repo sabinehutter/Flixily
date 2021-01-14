@@ -4,7 +4,7 @@ import { Card, CardWrapper } from 'react-swipeable-cards';
 
 function Example() {
     return (
-        <div>
+        <div className="card text-center text-light bg-dark m-3">
             <CardWrapper>
                 <Card>
                     Hello World!
