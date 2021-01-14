@@ -8,7 +8,6 @@ function ProfileCard (props) {
       </div>
       <div className="card-body ">{props.id}</div>
       <div className="card-body ">{props.email}</div>
-      <div className="card-body ">{props.comments}</div>
     </div>
   );
 }

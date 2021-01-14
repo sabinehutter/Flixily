@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Row, Container } from "../components/Grid";
 import { MovieList, MovieListItem } from "../components/MovieList";
 // import API from "../utils/API";
-class Saved extends Component {
+class Favorites extends Component {
   state = {
     savedMovies: [],
     screenWidth: window.innerWidth
