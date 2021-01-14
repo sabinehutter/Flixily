@@ -12,6 +12,7 @@ module.exports = {
   create: function(req, res) {
     console.log("in create method");
     console.log(req.body);
+    console.log(req.user);
      // if no user on the session
      if(!req.user) return res.status(401).end('user isnt authenticated')
 
@@ -19,7 +20,7 @@ module.exports = {
       // is this supposed to be email or id? 
       .create(
         {
-          userId: req.userId,
+          userId: req.user._id,
           movieId: req.body.id,
           title: req.body.title,
           image: req.body.image,
