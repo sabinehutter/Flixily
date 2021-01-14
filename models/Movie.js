@@ -20,12 +20,12 @@ const movieSchema = new mongoose.Schema({
 		autoIndex: true
 	  },
 	userId: {
-		type: Number,
+		type: String,
 		required: true,
 		trim: true
 	  },
 	movieId: {
-    type: Number,
+    type: String,
     unique: true,
     required: true,
     trim: true
