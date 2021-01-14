@@ -52,9 +52,9 @@ class SwipingCard extends Component {
     return (
 
       <div>
-        <CardWrapper>
+        {/* <CardWrapper> */}
 
-          <Card>
+          {/* <Card> */}
             <Flippy
               flipOnHover={false}
               flipOnClick={true}
@@ -83,9 +83,9 @@ class SwipingCard extends Component {
                 </div>
               </BackSide>
             </Flippy>
-            </Card>
+            {/* </Card> */}
 
-            </CardWrapper>
+            {/* </CardWrapper> */}
 
             <button className="btn btn-primary" onClick={() => { this.likeMovie() }}>CHECK</button>
             <button className="btn btn-primary" onClick={() => { this.dislikeMovie() }}>X</button>
