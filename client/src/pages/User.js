@@ -7,17 +7,19 @@ import NavBar from "../components/NavBar"
 
 // RENDER USER INFO
 
-function User() {
+function User(props) {
   const [user, setUser] = useState({})
+  console.log(props);
   // When this component mounts, grab the user with the _id of props.match.params.id
   // e.g. localhost:3000/users/599dcb67f0f16317844583fc
-  const match = useRouteMatch('/users/:id');
-   
+  // const match = useRouteMatch('/users/:id');
+  // console.log(match);
+
   useEffect(() => {
-    API.getUser(match.params.id)
+    API.getUser(props._id)
       .then(res => setUser(res.data))
       .catch(err => console.log(err));
-  }, [match.params.id])
+  }, [])
 
   return (
       <Container fluid>
