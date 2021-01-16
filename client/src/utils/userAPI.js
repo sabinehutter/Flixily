@@ -9,6 +9,9 @@ export default {
   },
   authenticateUser: function () {
     return axios.post("/api/user/authenticate/")
+  },
+  getUser: function() {
+    return axios.get("/api/user");
   }
 
 };
