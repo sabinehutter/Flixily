@@ -10,8 +10,8 @@ function MovieCard ({movie}) {
     const handleClose = (rating) => {
         console.log("the rating is ", rating);
         setShow(false);
-        API.rateMovie(movie._id, rating)
-        .then(() => {state.rating = rating})
+        state.rating = parseInt(rating);
+        API.rateMovie(state._id, state.rating)
 
     }
 
@@ -35,7 +35,7 @@ function MovieCard ({movie}) {
 
      
     return (
-        <>
+        <div>
         <Modal show={show} onHide={handleClose}>
               <Modal.Header closeButton>
                 <Modal.Title>Rate {movie.title}</Modal.Title>
@@ -68,7 +68,7 @@ function MovieCard ({movie}) {
                 </div>
             </div>
         </div>
-        </>
+        </div>
     )
 }
 
