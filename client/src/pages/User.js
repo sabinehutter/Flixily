@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useRouteMatch } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import ProfileCard from "../components/ProfileCard";
-import API from "../utils/API";
+import API from "../utils/userAPI";
 import NavBar from "../components/NavBar"
 
 // RENDER USER INFO
@@ -21,12 +21,13 @@ function User(props) {
       .catch(err => console.log(err));
   }, [])
 
+
   return (
       <Container fluid>
         <Row>
           <Col size="md-10 md-offset-1">
             <article>
-               <ProfileCard 
+               User Profile<ProfileCard 
                heading={user.username}
                id={user._id}
                email={user.email}>
