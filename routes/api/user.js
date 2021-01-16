@@ -23,5 +23,10 @@ router.route("/logout")
 router.route("/authenticate")
 	// Route for getting some data about our user to be used client side
    .post( userController.authenticate);
- 
+
+// Matches with "/api/user/user"
+router.route("/user")
+	// Route for getting user data
+	.get( userController.findById);
+
 module.exports = router;
