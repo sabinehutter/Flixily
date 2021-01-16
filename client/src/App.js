@@ -60,9 +60,8 @@ function App() {
 					</ProtectedRoute>
 
 					<ProtectedRoute exact path="/favorites" >
-						<Favorites {...userState} />
+						{/* <Favorites {...userState} /> */}
 					</ProtectedRoute>
- 
 					<ProtectedRoute exact path="/user" >
 						<User {...userState} />
 					</ProtectedRoute> 
