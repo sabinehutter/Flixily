@@ -35,8 +35,10 @@ module.exports = {
   },
 
   rate: function(req, res) {
+    console.log(req);
      db.Movies
-      .findOneAndUpdate({ _id: req.params.id }, req.body.rate)
+      .findOneAndUpdate({ _id: req.params._id, rating: req.body.rating 
+      })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

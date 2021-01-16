@@ -26,7 +26,7 @@ export default {
   },
   
   // Deletes the comment with the given id
-  rateMovie: function(id) {
-    return axios.post("/api/list/rate/" + id);
+  rateMovie: function(id, rating) {
+    return axios.post("/api/list/rate/" + id, rating);
   },
 };
