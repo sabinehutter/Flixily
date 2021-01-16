@@ -21,6 +21,7 @@ export default {
 
   // Gets all comments
   getMovies: function() {
+    console.log("getting movies")
     return axios.get("/api/saved/");
   },
   
