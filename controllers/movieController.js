@@ -1,4 +1,5 @@
 const db = require("../models");
+const mongoose = require("mongoose");
 
 // Defining methods for the commentsController
 module.exports = {
@@ -34,12 +35,16 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
 
-  rate: function(req, res) {
-    console.log(req);
+  rateMovie: function(req, res) {
+    console.log("!!!!!!!!");
+    console.log(req.body);
+    const idee = "ObjectId(" + req.body.id + ")";
+    console.log(idee);
      db.Movies
-      .findOneAndUpdate({ _id: req.params._id, rating: req.body.rating 
+      .findByIdAndUpdate(req.params.id, {rating: req.body.rating 
       })
       .then(dbModel => res.json(dbModel))
+      .then((data) => console.log("then, data", data))
       .catch(err => res.status(422).json(err));
   },
 };

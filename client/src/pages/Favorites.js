@@ -47,7 +47,7 @@ class Favorites extends Component {
         
         {this.state.savedMovies.map(movie => {
           return (
-            <MovieCard movie={movie} />
+            <MovieCard movie={movie} key={movie.id}/>
           )
 
           }
