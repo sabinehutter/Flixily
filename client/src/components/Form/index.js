@@ -3,8 +3,12 @@ import React from "react";
 // This file exports the Input, TextArea, and FormBtn components
 
 export function Input(props) {
+	const boxshadow = {
+		boxShadow: "0 0.5em 1em -0.125em rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.02)",
+		
+	}
 	return (
-		<div className='form-group'>
+		<div className='form-group' style={boxshadow}>
 			<input className='form-control' {...props} />
 		</div>
 	);
