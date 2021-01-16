@@ -36,8 +36,6 @@ module.exports = {
   },
 
   rateMovie: function(req, res) {
-    console.log("!!!!!!!!");
-    console.log(req.body);
     const idee = "ObjectId(" + req.body.id + ")";
     console.log(idee);
      db.Movies
