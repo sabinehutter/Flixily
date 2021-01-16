@@ -5,6 +5,12 @@ import {  Redirect, Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { Input, FormBtn } from "../components/Form";
 
+const formstyle= {
+  margin: "auto",
+  width: "50%",
+  boxShadow: "0 0.5em 1em -0.125em rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.02)",
+  }
+
 class Signup extends Component {
   state = {
     email: "1@1",
@@ -56,7 +62,7 @@ class Signup extends Component {
         <Row>
           <Col size="12">
  
-            <form>
+            <form style={formstyle}>
               <Input
                 value={this.state.username}
                 onChange={this.handleInputChange}
