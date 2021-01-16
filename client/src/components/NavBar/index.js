@@ -15,7 +15,7 @@ function NavBar(user) {
     console.log("in navbar comp", user);
     return (
         <>
-            <Navbar bg="light" expand="lg" style={boxshadow}>
+            <Navbar style= {{backgroundColor: "#FFDD67", boxshadow}} expand="lg" >
             <Navbar.Brand className="" href="/explore">
                     <a href="/explore">
                         <img src={Logo} style={{ width: 100, marginTop: -7 }} />

@@ -59,8 +59,8 @@ class MovieCard extends Component {
 
             // style={{ height: '70%', width: '30%', margin: '0 auto', float: "none" }} /// these are optional style, it is not necessary
             >
-                {/* <CardWrapper>
-            <Card> */}
+                <CardWrapper>
+            <Card>
                 <FrontSide
                 >
                     <img src={this.state.image} alt={this.state.title} style={{ margin: '0 auto', float: "none", display: "block" }} />
@@ -80,8 +80,8 @@ class MovieCard extends Component {
 
                     </div>
                 </BackSide>
-                {/* </Card>
-              </CardWrapper > */}
+                </Card>
+              </CardWrapper >
             </Flippy>
 
         )

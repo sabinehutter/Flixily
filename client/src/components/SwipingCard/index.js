@@ -20,7 +20,6 @@ class SwipingCard extends Component {
     image: '',
     plot: '',
   }
-
   
 
   componentDidMount() {
@@ -53,9 +52,25 @@ class SwipingCard extends Component {
   };
 
 
-  renderCards() {
+//   renderCards() {
+//     return (
+//       <Card 
+//       onSwipeLeft={this.dislikeMovie.bind(this)}
+//       onSwipeRight={this.likeMovie.bind(this)}>
+//         {/* <MovieCard/> */}
+//       <a>
+//         <img src={this.state.image} alt={this.state.title} style={{ margin: '0 auto', float: "none", display: "block" }} />
+//         </a>
+//       </Card>
+//     );
+// }
+
+  render() {
     return (
-      <Card 
+      <>
+
+        <CardWrapper> 
+        <Card 
       onSwipeLeft={this.dislikeMovie.bind(this)}
       onSwipeRight={this.likeMovie.bind(this)}>
         {/* <MovieCard/> */}
@@ -63,15 +78,6 @@ class SwipingCard extends Component {
         <img src={this.state.image} alt={this.state.title} style={{ margin: '0 auto', float: "none", display: "block" }} />
         </a>
       </Card>
-    );
-}
-
-  render() {
-    return (
-      <>
-
-        <CardWrapper> 
-       {this.renderCards()} 
        </CardWrapper>
 
         {/* <button className="btn btn-primary" style={{ backgroundImage: "url(" + LikeImage + ")" }} onClick={() => { this.likeMovie() }}></button>
