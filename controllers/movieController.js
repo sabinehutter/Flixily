@@ -3,12 +3,14 @@ const db = require("../models");
 // Defining methods for the commentsController
 module.exports = {
   findMoviesByUser: function(req, res) {
-    console.log(req.params.userId)
+    console.log("findmoviesbyuser");
+    console.log(req.user)
    db.Movies
-     .findById(req.params.userId)
+     .find({ userId: req.user._id })
      .then(dbModel => res.json(dbModel))
      .catch(err => res.status(422).json(err));
  },
+ 
   create: function(req, res) {
     console.log("in create method");
     console.log(req.body);
