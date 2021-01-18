@@ -12,7 +12,7 @@ export default {
   },
   getUser: function() {
     console.log("getting user")
-    return axios.get("/api/user/");
+    return axios.get("/api/user/user");
   }
 
 };

@@ -27,6 +27,6 @@ router.route("/authenticate")
 // Matches with "/api/user/user"
 router.route("/user")
 	// Route for getting user data
-	.get( userController.findById);
+	.get( userController.authenticate );
 
 module.exports = router;
