@@ -11,9 +11,10 @@ router.route("/")
 // Matches with "/api/saved/rate/:id"
 router.route("/rate/:id")
   .post(movieController.rateMovie);
+  
 
-router.route("/rate/delete/:id")
-  .delete(movieController.delete);
+router.route("/delete/:id")
+  .delete(movieController.deleteMovie);
 
   
 module.exports = router;
