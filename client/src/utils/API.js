@@ -30,4 +30,8 @@ export default {
     console.log("tryna change the rate", rating);
     return axios.post("/api/saved/rate/" + id, {id: id, rating: rating});
   },
+
+  deleteMovie: function(id) {
+    return axios.delete("/api/saved/delete/" + id);
+  }
 };
