@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
-import Cards, { Card } from 'react-swipe-card'
+import Cards, { Card } from 'react-swipe-card';
+import Like from '../../assets/img/Like3.jpg';
+import Dislike from '../../assets/img/Dislike3.jpg';
+
 
 const style = { width: "300px" }
 
@@ -86,10 +89,14 @@ class SwipingCard extends Component {
             {/* </Card> */}
 
             {/* </CardWrapper> */}
-
-            <button className="btn btn-primary" onClick={() => { this.likeMovie() }}>CHECK</button>
-            <button className="btn btn-primary" onClick={() => { this.dislikeMovie() }}>X</button>
-
+            <div className="LikeDislike">
+            <div className="text-center LikeDislikeBtn">
+            <button className="btn btn-link" onClick={() => { this.likeMovie() }}> <img src={Like} width="70" /></button>
+            </div>
+            <div className="text-center LikeDislikeBtn">
+            <button className="btn btn-link" onClick={() => { this.dislikeMovie() }}><img src={Dislike} width="70" /></button>
+            </div>
+            </div>
       </div>
         
 
