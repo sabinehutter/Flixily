@@ -28,13 +28,14 @@ class Favorites extends Component {
       })
   }
 
-  // deleteSavedMovie = (event, movieId) => {
-  //   event.preventDefault();
-  //   // Which API?
-  //   API.deleteSavedBook(movieId)
-  //     .then(res => this.loadSavedMovies())
-  //     .catch(err => console.log(err));
-  // };
+  deleteSavedMovie = (id) => {
+    console.log("deleteSavedMovie" + id)
+    API.deleteMovie(id) 
+    .then(() => this.loadSavedMovies())
+  }
+
+  
+
   render() {
     return (
       <div>
@@ -47,7 +48,20 @@ class Favorites extends Component {
         
         {this.state.savedMovies.map(movie => {
           return (
-            <MovieCard movie={movie} key={movie.id}/>
+            <MovieCard 
+              movie={movie} 
+              key={movie.id}
+              Button={() => (
+                <button
+                  onClick={() => this.deleteSavedMovie(movie._id)}
+                  className="btn btn-danger ml-2"
+                >
+                  Delete
+                </button>
+              )}
+              
+              
+              />
           )
 
           }

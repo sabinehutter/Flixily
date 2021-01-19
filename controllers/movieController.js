@@ -45,9 +45,10 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
 
-  delete: function(req, res) {
+  deleteMovie: function(req, res) {
+    console.log(req.params.id);
     db.Movies
-      .findByIdAndDelete(req.params.id)
+      .deleteOne({_id: req.params.id})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   }
