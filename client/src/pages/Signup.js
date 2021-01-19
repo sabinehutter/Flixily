@@ -4,12 +4,15 @@ import userAPI from "../utils/userAPI";
 import {  Redirect, Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { Input, FormBtn } from "../components/Form";
+import Background from "../components/Background/Background.css";
+
 
 const formstyle= {
   margin: "auto",
   width: "50%",
   boxShadow: "0 0.5em 1em -0.125em rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.02)",
   }
+
 
 class Signup extends Component {
   state = {
@@ -18,6 +21,7 @@ class Signup extends Component {
     password: "1",
     passwordConf: "1"
   };
+  
 
   componentDidMount() {
   }
@@ -56,13 +60,17 @@ class Signup extends Component {
     }
   };
 
+ 
   render() {
     return (
+      <div className="Signup">
+
+    
       <Container fluid>
         <Row>
           <Col size="12">
- 
             <form style={formstyle}>
+            <div className="SignupCard">
               <Input
                 value={this.state.username}
                 onChange={this.handleInputChange}
@@ -89,27 +97,38 @@ class Signup extends Component {
                 placeholder="(required)"
                 type="password"
               />
-              
+                         
               <FormBtn
                 // disabled={!(this.state.email && this.state.password)}
                 onClick={this.handleFormSubmit}
               >
+                <button type="button" class="btn btn-outline-warning" data-mdb-ripple-color="light">
                 signup
+                </button>
               </FormBtn>
               <Link to="/">
-               <FormBtn> Login </FormBtn>
+              
+               <FormBtn> 
+               <button type="button" class="btn btn-outline-warning" data-mdb-ripple-color="light">
+                 Login 
+                 </button>
+                 </FormBtn>
+               
              </Link>
+             </div> 
             </form>
+
           </Col>
-          
         </Row>
         {/* redirect on authenticated */}
         {this.props.authenticated ? <Redirect to='/explore'/>: <div></div>}
 
 
       </Container>
+      </div>
     );
   }
 }
+
 
 export default Signup;

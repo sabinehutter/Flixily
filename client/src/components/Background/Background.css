@@ -1,0 +1,50 @@
+
+.Signup{
+
+    
+    background: url("../../assets/img/Flixily.png");
+    background: cover;
+    background-position: center;
+    background-size: 500px;
+    background-repeat: no-repeat;
+
+    
+
+}
+
+.SignupCard{
+    /* background-color:#343a40; */
+    /* background-color:rgb(253, 226, 106); */
+    /* rgb(253, 226, 106); */
+    /* background: rgb(253, 226, 106); */
+ /* background: linear-gradient(rgb(253, 226, 106),#fff); */
+ /* background: linear-gradient(#fff,grey); */
+}
+
+.color-nav{
+    background-color:rgb(253, 226, 106);
+     /* rgb(253, 226, 106); */
+     background: rgb(253, 226, 106);
+  background: linear-gradient(orange,rgb(253, 226, 106));
+    
+}
+.LikeDislike{
+    /* width: 50%; */
+    /* margin: auto; */
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.LikeDislikeBtn:hover
+{
+    transform: scale(1.5);
+}
+
+.NavHover:hover{
+    transform: scale(1.5);
+    text-decoration: underline;
+}
+.FlixilyLogo:hover{
+    transform: scale(1.5);
+}
