@@ -11,7 +11,8 @@ export default {
     return axios.post("/api/user/authenticate/")
   },
   getUser: function() {
-    return axios.get("/api/user");
+    console.log("getting user")
+    return axios.get("/api/user/user");
   }
 
 };
