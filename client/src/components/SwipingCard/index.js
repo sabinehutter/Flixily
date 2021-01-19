@@ -90,11 +90,12 @@ class SwipingCard extends Component {
 
             {/* </CardWrapper> */}
             <div className="LikeDislike">
-            <div className="text-center LikeDislikeBtn">
-            <button className="btn btn-link" onClick={() => { this.likeMovie() }}> <img src={Like} width="70" /></button>
-            </div>
+            
             <div className="text-center LikeDislikeBtn">
             <button className="btn btn-link" onClick={() => { this.dislikeMovie() }}><img src={Dislike} width="70" /></button>
+            </div>
+            <div className="text-center LikeDislikeBtn">
+            <button className="btn btn-link" onClick={() => { this.likeMovie() }}> <img src={Like} width="70" /></button>
             </div>
             </div>
       </div>
