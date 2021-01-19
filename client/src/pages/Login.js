@@ -46,7 +46,9 @@ class Login extends Component {
   };
 
   render() {
+    
     return (
+      <div className="Login">
       <Container fluid>
         <Row>
           <Col size="12">
@@ -69,15 +71,20 @@ class Login extends Component {
                 disabled={!(this.state.email && this.state.password)}
                 onClick={this.handleFormSubmit}
               >
+                <button type="button" class="btn btn-outline-warning" data-mdb-ripple-color="dark">
                 Log in
+                </button>
               </FormBtn>
              <Link to="/signup">
-               <FormBtn> Signup </FormBtn>
+               <FormBtn> 
+               <button type="button" class="btn btn-outline-warning" data-mdb-ripple-color="light">Signup 
+               </button></FormBtn>
              </Link>
             </form>
           </Col>
         </Row>
       </Container>
+      </div>
     );
   }
 }
