@@ -1,10 +1,11 @@
 import React, {useState, Button} from "react";
 import API from "../utils/API";
 import Modal from 'react-bootstrap/Modal'
+import { render } from "react-dom";
 
 
-function MovieCard ({movie}) {
-    const state = movie;
+function MovieCard (props) {
+    const state = props.movie;
     const [show, setShow] = useState(false);
       
     const handleClose = (rating) => {
@@ -16,29 +17,13 @@ function MovieCard ({movie}) {
     }
 
     const handleShow = () => setShow(true);
-    
-    // rateMovie = () => {
-    //     let mov = {};
-
-    //     API.getMovie(this.state.title)
-    //     .then((req, res) => {
-    //         mov = res;
-    //     })
-        
-    //     render() {
-
-    //     }
-    // }
-
-    // rateMovie() {
-
 
      
     return (
         <div>
         <Modal show={show} onHide={handleClose}>
               <Modal.Header closeButton>
-                <Modal.Title>Rate {movie.title}</Modal.Title>
+                <Modal.Title>Rate {props.movie.title}</Modal.Title>
               </Modal.Header>
               <Modal.Body>
                   <input></input>
@@ -56,12 +41,13 @@ function MovieCard ({movie}) {
                     <div className="card">
                         <div className="card-horizontal">
                             <div className="img-square-wrapper">
-                                <img className="" src={movie.image} alt={movie.title}/>
+                                <img className="" src={props.movie.image} alt={props.movie.title}/>
                             </div>
                             <div className="card-body">
-                                <h2>{movie.title}</h2>
+                                <h2>{props.movie.title}</h2>
                                 <p className="card-text">{state.rating} /5</p>
-                                <button onClick={handleShow} >Rate</button>
+                                <button onClick={handleShow}>Rate</button>
+                                <props.Button/>
                             </div>
                         </div>
                     </div>
