@@ -25,8 +25,9 @@ export default {
     return axios.get("/api/saved/");
   },
   
-  // Deletes the comment with the given id
-  rateMovie: function(id) {
-    return axios.post("/api/list/rate/" + id);
+
+  rateMovie: function(id, rating) {
+    console.log("tryna change the rate", rating);
+    return axios.post("/api/saved/rate/" + id, {id: id, rating: rating});
   },
 };
