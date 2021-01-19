@@ -48,7 +48,7 @@ class Login extends Component {
   render() {
     
     return (
-      <div className="Signup">
+      <div className="Login">
       <Container fluid>
         <Row>
           <Col size="12">
