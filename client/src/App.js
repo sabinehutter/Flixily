@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useState } from "react";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -9,7 +9,6 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Explorer from "./pages/Explore";
 import User from "./pages/User";
 import Favorites from "./pages/Favorites"
-import Container from "./components/Grid"
 
 function App() {
 
@@ -62,7 +61,6 @@ function App() {
 					<ProtectedRoute exact path="/favorites" >
 						<Favorites {...userState} />
 					</ProtectedRoute>
- 
 					<ProtectedRoute exact path="/user" >
 						<User {...userState} />
 					</ProtectedRoute> 
@@ -73,44 +71,6 @@ function App() {
 				{userState.email ? <Redirect to="/explore" /> : <></>}
 			</Router>
 		</>
-
-		// // // // // // // // // <Router>
-		// // // // // // // // // 	<Head />
-		// // // // // // // // // 	<Container>
-		// // // // // // // // // 		<Switch>
-		// // // // // // // // // 			<Route
-		// // // // // // // // // 				exact
-		// // // // // // // // // 				path='/'
-		// // // // // // // // // 				render={ props => (
-		// // // // // // // // // 					<Login
-		// // // // // // // // // 						{...props}
-		// // // // // // // // // 						userState={userState}
-		// // // // // // // // // 						setUserState={setUserState}
-		// // // // // // // // // 					/>
-		// // // // // // // // // 				)}
-		// // // // // // // // // 			/>
-		// // // // // // // // // 			<Route
-		// // // // // // // // // 				exact
-		// // // // // // // // // 				path='/signup'
-		// // // // // // // // // 				render={ props => (
-		// // // // // // // // // 					<Signup
-		// // // // // // // // // 						{...props}
-		// // // // // // // // // 						authenticate={authenticate}
-		// // // // // // // // // 						user={userState}
-		// // // // // // // // // 					/>
-		// // // // // // // // // 				)}
-		// // // // // // // // // 			/>
-		// // // // // // // // //        <ProtectedRoute exact path={["/", "/explore"]}>
-		// // // // // // // // //           <Comments {...userState} />
-		// // // // // // // // //        </ProtectedRoute>
-		// // // // // // // // //        <ProtectedRoute exact path='/explore/:id' >
-		// // // // // // // // //           <Comment {...userState} />
-		// // // // // // // // //        </ProtectedRoute>
-		// // // // // // // // // 			<Route component={NoMatch} />
-		// // // // // // // // // 		</Switch>
-		// // // // // // // // // 	</Container>
-		// // // // // // // // //  { userState.email ? <Redirect to="/explore" /> : <></>}
-		// // // // // // // // // </Router>
 	);
 }
 

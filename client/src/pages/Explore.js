@@ -1,17 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { Link, useRouteMatch, Switch, Router, Route } from "react-router-dom";
-import { Col, Row, Container } from "../components/Grid";
-import Card from "../components/Card";
-import API from "../utils/API";
-import Example from "../components/SwipeExample"
-
-import NavBar from "../components/NavBar"
-
-
+import React from "react";
 
 import SwipingCard from "../components/SwipingCard"
-import User from "./User";
-
 
 function Explore() {
   // const [comment, setComment] = useState({})

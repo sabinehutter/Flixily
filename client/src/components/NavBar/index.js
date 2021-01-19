@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Redirect, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Logo from "../../assets/img/Flixily.png"
@@ -22,9 +22,9 @@ function NavBar(user) {
             <Navbar className="color-nav" expand="lg" style={boxshadow}>
             
                 <Navbar.Brand className= "mt-0 ml-0 mb-3 text-dark p-4 pt-3 pl-3" href="/explore">
-                <a href="/explore">
-                        <img class="FlixilyLogo"src={Logo} style={{ width: 130, marginTop: -7 }} />
-                    </a>
+                {/* <a href="/explore"> */}
+                        <img className="FlixilyLogo"src={Logo} alt="Flixily logo" style={{ width: 130, marginTop: -7 }} />
+                    {/* </a> */}
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Nav className="mr-auto row">

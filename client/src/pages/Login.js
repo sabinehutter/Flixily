@@ -4,7 +4,6 @@ import userAPI from "../utils/userAPI";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { Input, FormBtn } from "../components/Form";
-import { authorize } from "passport";
 
 const formstyle= {
 margin: "auto",
@@ -71,13 +70,13 @@ class Login extends Component {
                 disabled={!(this.state.email && this.state.password)}
                 onClick={this.handleFormSubmit}
               >
-                <button type="button" class="btn btn-outline-warning" data-mdb-ripple-color="dark">
+                <button type="button" className="btn btn-outline-warning" data-mdb-ripple-color="dark">
                 Log in
                 </button>
               </FormBtn>
              <Link to="/signup">
                <FormBtn> 
-               <button type="button" class="btn btn-outline-warning" data-mdb-ripple-color="light">Signup 
+               <button type="button" className="btn btn-outline-warning" data-mdb-ripple-color="light">Signup 
                </button></FormBtn>
              </Link>
             </form>

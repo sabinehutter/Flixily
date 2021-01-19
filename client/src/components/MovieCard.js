@@ -1,4 +1,4 @@
-import React, {useState, Button} from "react";
+import React, {useState} from "react";
 import API from "../utils/API";
 import Modal from 'react-bootstrap/Modal'
 

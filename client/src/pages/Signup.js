@@ -102,14 +102,14 @@ class Signup extends Component {
                 // disabled={!(this.state.email && this.state.password)}
                 onClick={this.handleFormSubmit}
               >
-                <button type="button" class="btn btn-outline-warning" data-mdb-ripple-color="light">
+                <button type="button" className="btn btn-outline-warning" data-mdb-ripple-color="light">
                 signup
                 </button>
               </FormBtn>
               <Link to="/">
               
                <FormBtn> 
-               <button type="button" class="btn btn-outline-warning" data-mdb-ripple-color="light">
+               <button type="button" classNa="btn btn-outline-warning" data-mdb-ripple-color="light">
                  Login 
                  </button>
                  </FormBtn>

@@ -1,9 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { Link, useRouteMatch } from "react-router-dom";
-import { Col, Row, Container } from "../components/Grid";
-import ProfileCard from "../components/ProfileCard";
-import API from "../utils/userAPI";
-import NavBar from "../components/NavBar"
+import React from "react";
+import { Link } from "react-router-dom";
+import { Row} from "../components/Grid";
 import "../components/ProfileCard/profileStyle.css";
 
 
@@ -18,13 +15,13 @@ function User(props) {
             <h1>Welcome FLIXSTER!</h1>
           </div>
     </Row>
-  <div class="cardd-container">
-    <div class="card-container">
+  <div className="cardd-container">
+    <div className="card-container">
     <br>
     </br>   
-      <h3 class="h3-v2">{props.username}</h3>
-      <h6 class="h3-v2">{props.email}</h6>
-        <p class="p-v2">
+      <h3 className="h3-v2">{props.username}</h3>
+      <h6 className="h3-v2">{props.email}</h6>
+        <p className="p-v2">
           <br/>
           <br/>
           Update your FLIXSTER bio! 
@@ -36,14 +33,14 @@ function User(props) {
             <input type="submit"></input>
           </form>
         </p>
-      <div class="buttons">
+      <div className="buttons">
         <Link to="/Explore">
-        <button class="buttons-primary">
+        <button className="buttons-primary">
             Browse Flix
         </button>
         </Link>
       </div>
-      <div class="skills">
+      <div className="skills">
         <h6>FLIXSTER Milestones</h6>
         <ul>
             <li>Movies Rated</li>
