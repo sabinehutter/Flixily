@@ -36,13 +36,21 @@ module.exports = {
   },
 
   rateMovie: function(req, res) {
-    const idee = "ObjectId(" + req.body.id + ")";
-    console.log(idee);
+    // const idee = "ObjectId(" + req.body.id + ")";
+    // console.log(idee);
      db.Movies
       .findByIdAndUpdate(req.params.id, {rating: req.body.rating 
       })
       .then(dbModel => res.json(dbModel))
-      .then((data) => console.log("then, data", data))
       .catch(err => res.status(422).json(err));
   },
+
+  delete: function(req, res) {
+    db.Movies
+      .deleteOne({_id: req.params.id})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  }
 };
+
+

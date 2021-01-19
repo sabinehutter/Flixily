@@ -12,4 +12,8 @@ router.route("/")
 router.route("/rate/:id")
   .post(movieController.rateMovie);
 
+router.route("/rate/delete/:id")
+  .post(movieController.delete);
+
+  
 module.exports = router;
