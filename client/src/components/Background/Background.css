@@ -4,6 +4,19 @@
     
     background: url("../../assets/img/Flixily.png");
     background: cover;
+    background-position: bottom center;
+    background-size: 500px;
+    background-repeat: no-repeat;
+
+    
+
+}
+
+.Login{
+
+    
+    background: url("../../assets/img/Flixily.png");
+    background: cover;
     background-position: center;
     background-size: 500px;
     background-repeat: no-repeat;
