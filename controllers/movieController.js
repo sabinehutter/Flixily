@@ -47,7 +47,7 @@ module.exports = {
 
   delete: function(req, res) {
     db.Movies
-      .deleteOne({_id: req.params.id})
+      .findByIdAndDelete(req.params.id)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   }

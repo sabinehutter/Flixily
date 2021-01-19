@@ -17,21 +17,9 @@ function MovieCard ({movie}) {
 
     const handleShow = () => setShow(true);
     
-    // rateMovie = () => {
-    //     let mov = {};
-
-    //     API.getMovie(this.state.title)
-    //     .then((req, res) => {
-    //         mov = res;
-    //     })
-        
-    //     render() {
-
-    //     }
-    // }
-
-    // rateMovie() {
-
+    const deleteMovie = () => {
+        API.deleteMovie(state._id)
+    }
 
      
     return (
@@ -61,7 +49,8 @@ function MovieCard ({movie}) {
                             <div className="card-body">
                                 <h2>{movie.title}</h2>
                                 <p className="card-text">{state.rating} /5</p>
-                                <button onClick={handleShow} >Rate</button>
+                                <button onClick={handleShow}>Rate</button>
+                                <button onClick={deleteMovie}>Remove</button>
                             </div>
                         </div>
                     </div>
