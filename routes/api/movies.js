@@ -13,7 +13,7 @@ router.route("/rate/:id")
   .post(movieController.rateMovie);
 
 router.route("/rate/delete/:id")
-  .post(movieController.delete);
+  .delete(movieController.delete);
 
   
 module.exports = router;
