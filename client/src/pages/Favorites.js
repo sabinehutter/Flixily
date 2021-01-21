@@ -28,19 +28,40 @@ class Favorites extends Component {
       })
   }
 
+  deleteSavedMovie = (id) => {
+    console.log("deleteSavedMovie" + id)
+    API.deleteMovie(id) 
+    .then(() => this.loadSavedMovies())
+  }
+
+  
+
   render() {
     return (
       <div>
       
         <Row>
-          <div className="col rounded text-center bg-info mt-4 mb-4 p-4">
-            <h1>Your Favorites Movies</h1>
+          <div className="col rounded text-center mt-4 mb-4 p-4">
+            <h1 style = {{color : "#FFDD67"}}>Your Favorites Movies</h1>
           </div>
         </Row>
         
         {this.state.savedMovies.map(movie => {
           return (
-            <MovieCard movie={movie} key= {movie.id}/>
+            <MovieCard 
+              movie={movie} 
+              key={movie.id}
+              Button={() => (
+                <button
+                  onClick={() => this.deleteSavedMovie(movie._id)}
+                  className="btn btn-danger ml-2"
+                >
+                  Delete
+                </button>
+              )}
+              
+              
+              />
           )
 
           }

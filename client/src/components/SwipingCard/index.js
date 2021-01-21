@@ -48,10 +48,8 @@ class SwipingCard extends Component {
   render() {
     return (
 
-      <div style = {{marginTop : "20px"}}>
-        {/* <CardWrapper> */}
+      <div style = {{marginTop : "50px"}}>
 
-        {/* <Card> */}
         <Flippy
           flipOnHover={false}
           flipOnClick={true}
@@ -80,15 +78,13 @@ class SwipingCard extends Component {
             </div>
           </BackSide>
         </Flippy>
-        {/* </Card> */}
 
-        {/* </CardWrapper> */}
         <div className="LikeDislike">
           <div className="text-center LikeDislikeBtn">
-            <button className="btn btn-link" onClick={() => { this.likeMovie() }}> <img src={Like} alt="like" width="70" /></button>
+            <button className="btn btn-link" onClick={() => { this.dislikeMovie() }}> <img src={Dislike} alt="dislike" width="70" /></button>
           </div>
           <div className="text-center LikeDislikeBtn">
-            <button className="btn btn-link" onClick={() => { this.dislikeMovie() }}><img src={Dislike} alt="dislike" width="70" /></button>
+            <button className="btn btn-link" onClick={() => { this.likeMovie() }}><img src={Like} alt="like" width="70" /></button>
           </div>
         </div>
       </div>

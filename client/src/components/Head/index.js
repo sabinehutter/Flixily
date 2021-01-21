@@ -6,9 +6,11 @@ function Nav ({ user }) {
 	console.log(user);
 
 	return (
-		<nav>
+
+		<>
 			<NavBar user={user}/>
-		</nav>
+		</>
+
 	);
 }
 
