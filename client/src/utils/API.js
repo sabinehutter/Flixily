@@ -9,10 +9,10 @@ import axios from "axios";
 export default {
   getRandomMovie: function() {
     let movie = randomMovie();
-    return axios.get("http://www.omdbapi.com/?apikey=79bf881d&t=" + movie);
+    return axios.get("https://www.omdbapi.com/?apikey=79bf881d&t=" + movie);
   },
   getMovie: function(movie) {
-    return axios.get("http://www.omdbapi.com/?apikey=79bf881d&t=" + movie);
+    return axios.get("https://www.omdbapi.com/?apikey=79bf881d&t=" + movie);
   },
 
   likeMovie: function(movie) {
