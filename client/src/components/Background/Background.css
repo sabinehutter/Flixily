@@ -2,12 +2,15 @@
 .Signup{
 
     
-    background: url("../../assets/img/Flixily.png");
+    background: url("../../assets/img/movie.jpg");
     background: cover;
-    background-position: bottom center;
-    background-size: 500px;
+    background-position: center;
+    /* background-size: 500px; */
     background-repeat: no-repeat;
-
+    left: 0px;
+    top: 0px;
+    /* z-index: -1; */
+    position:relative;
     
 
 }
@@ -15,13 +18,15 @@
 .Login{
 
     
-    background: url("../../assets/img/Flixily.png");
+    background: url("../../assets/img/movie.jpg");
     background: cover;
     background-position: center;
-    background-size: 500px;
+    /* background-size: 500px; */
     background-repeat: no-repeat;
-
-    
+    left: 0px;
+    top: 0px;
+    /* z-index: -1; */
+    position:relative;  
 
 }
 
@@ -56,8 +61,16 @@
 
 .NavHover:hover{
     transform: scale(1.5);
-    text-decoration: underline;
+    font-weight: 900;
 }
 .FlixilyLogo:hover{
     transform: scale(1.5);
+    transition: 2s ease-in-out
+}
+
+.loginRow{
+    background-color: green;
+    position: relative;
+    z-index: 9998!important;
+    
 }

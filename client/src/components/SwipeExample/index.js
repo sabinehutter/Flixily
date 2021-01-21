@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import { Route, Redirect } from "react-router-dom";
+import React from 'react';
 import { Card, CardWrapper } from 'react-swipeable-cards';
 
 function Example() {

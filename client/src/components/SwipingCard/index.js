@@ -1,16 +1,10 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import Flippy, { FrontSide, BackSide } from 'react-flippy';
-import Cards, { Card } from 'react-swipe-card';
 import Like from '../../assets/img/Like3.jpg';
 import Dislike from '../../assets/img/Dislike3.jpg';
+import "./style.css"
 
-
-const style = { width: "300px" }
-
-const action = (action) => {
-  console.log('action', action);
-};
 
 
 class SwipingCard extends Component {
@@ -54,52 +48,47 @@ class SwipingCard extends Component {
   render() {
     return (
 
-      <div>
-        {/* <CardWrapper> */}
+      <div style = {{marginTop : "50px"}}>
 
-          {/* <Card> */}
-            <Flippy
-              flipOnHover={false}
-              flipOnClick={true}
-              flipDirection="horizontal"
-              ref={(r) => this.flippy = r}
+        <Flippy
+          flipOnHover={false}
+          flipOnClick={true}
+          flipDirection="horizontal"
+          ref={(r) => this.flippy = r}
 
-              style={{ height: '70%', width: '30%', margin: '0 auto', float: "none" }} /// these are optional style, it is not necessary
-            >
-              <FrontSide
-                style={{
-                  backgroundColor: '#41669d',
-                }}
-              >
-                <img src={this.state.image} alt={this.state.title} style={{ margin: '0 auto', float: "none", display: "block" }} />
-                <div className="card-body">
-                  <h5 className="card-title display-4" style={{ textAlign: 'center' }}>{this.state.title}</h5>
-                </div>
-              </FrontSide>
-              <BackSide
-                style={{ backgroundColor: '#175852' }}>
-                <div className="card-body">
-                  <h5 className="card-title">{this.state.title}</h5>
-                  <p className="card-text">{this.state.plot}</p>
+          style={{ height: '30EM', width: '30%', margin: '0 auto', float: "none" }} /// these are optional style, it is not necessary
+        >
+          <FrontSide>
 
-
-                </div>
-              </BackSide>
-            </Flippy>
-            {/* </Card> */}
-
-            {/* </CardWrapper> */}
-            <div className="LikeDislike">
-            
-            <div className="text-center LikeDislikeBtn">
-            <button className="btn btn-link" onClick={() => { this.dislikeMovie() }}><img src={Dislike} width="70" /></button>
+            <div className="card-header">
+              <img src={this.state.image} alt="movie"/>
             </div>
-            <div className="text-center LikeDislikeBtn">
-            <button className="btn btn-link" onClick={() => { this.likeMovie() }}> <img src={Like} width="70" /></button>
+            <div className="card-content">
+              <h3>{this.state.title}</h3>
             </div>
+          </FrontSide>
+          <BackSide>
+            <div className="card-body">
+            <div className="card-content">
+              <h3>{this.state.title}</h3>
             </div>
+              <p className="card-text">{this.state.plot}</p>
+
+
+            </div>
+          </BackSide>
+        </Flippy>
+
+        <div className="LikeDislike">
+          <div className="text-center LikeDislikeBtn">
+            <button className="btn btn-link" onClick={() => { this.dislikeMovie() }}> <img src={Dislike} alt="dislike" width="70" /></button>
+          </div>
+          <div className="text-center LikeDislikeBtn">
+            <button className="btn btn-link" onClick={() => { this.likeMovie() }}><img src={Like} alt="like" width="70" /></button>
+          </div>
+        </div>
       </div>
-        
+
 
     );
   };

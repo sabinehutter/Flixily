@@ -4,14 +4,20 @@ import userAPI from "../utils/userAPI";
 import {  Redirect, Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { Input, FormBtn } from "../components/Form";
-import Background from "../components/Background/Background.css";
+import  "../components/Background/Background.css";
 
 
-const formstyle= {
+const formstyle = {
   margin: "auto",
-  width: "50%",
+  width: "100%",
   boxShadow: "0 0.5em 1em -0.125em rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.02)",
-  }
+  height: "20REM",
+  paddingRight: "50px",
+  paddingLeft: "50px",
+  // paddingBottom: "50px",
+  color: "#FFDD67",
+  // zIndex: "9998!important"
+}
 
 
 class Signup extends Component {
@@ -67,8 +73,10 @@ class Signup extends Component {
 
     
       <Container fluid>
+      <div style = {{backgroundColor: "white", opacity: "0.95", borderRadius: '50px!important' , position: "relative"}}> 
         <Row>
           <Col size="12">
+          <h1 style={{paddingLeft: "50px",paddingBottom: "10px", paddingTop: "100px", color: "#FFDD67"}}>Sign Up!</h1>
             <form style={formstyle}>
             <div className="SignupCard">
               <Input
@@ -98,18 +106,18 @@ class Signup extends Component {
                 type="password"
               />
                          
-              <FormBtn
+              <FormBtn className="btn btn-warning" style  = {{color : "white"}}
                 // disabled={!(this.state.email && this.state.password)}
                 onClick={this.handleFormSubmit}
               >
-                <button type="button" class="btn btn-outline-warning" data-mdb-ripple-color="light">
-                signup
+                <button type="button" className="btn btn-warning" style  = {{color : "white"}}>
+                Sign Up
                 </button>
               </FormBtn>
               <Link to="/">
               
-               <FormBtn> 
-               <button type="button" class="btn btn-outline-warning" data-mdb-ripple-color="light">
+               <FormBtn className="btn btn-warning" style  = {{color : "white"}} > 
+               <button type="button" className="btn btn-warning" style  = {{color : "white"}}>
                  Login 
                  </button>
                  </FormBtn>
@@ -123,7 +131,7 @@ class Signup extends Component {
         {/* redirect on authenticated */}
         {this.props.authenticated ? <Redirect to='/explore'/>: <div></div>}
 
-
+      </div>
       </Container>
       </div>
     );
