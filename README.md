@@ -1,59 +1,87 @@
-# 📦 M-E-R-N + passport box
+# Flixily Application
+  ![badmath](https://img.shields.io/badge/license-MIT-green)
 
-<!-- ##### :earth_africa: [live]() on heroku -->
+  # Welcome to Flixily!  
 
-## 🍽 Use
--   Fork, or clone and copy what you need
+  ## Description
+   This application allows you to automatically track your cardio and resistance workouts!
 
-### 🗃️ Folder structure
+   ![Application Entry](https://github.com/sabinehutter/Sweat-Workout-Tracker/blob/main/public/images/Sweat-Landing.png)
+   
+   Time to get in shape!!
 
+   Whene you first launch the application you will be prompted to enter a "New Workout"
+   
+   ![New Workout](https://github.com/sabinehutter/Sweat-Workout-Tracker/blob/main/public/images/Sweat-New-Exercise.png)
 
-```
-.
-├── _assets                <- # project management assets
-├── client                 <- # front end react app                        
-│   ├── README.md          <- # create react app readme
-│   ├── package.json       <- # create react app dev server (hot reloading)
-│   ├── public             <- # front end static files 
-│   │   ├── favicon.ico
-│   │   ├── index.html
-│   │   └── manifest.json
-│   └── src                <- # font end source (can also place static files to be packed with webpack)
-│       ├── App.js         <- # 🚀 react app entry point 
-│       ├── components     <- # reusable components
-│       │   ├── Card
-│       │   ├── DeleteBtn
-│       │   ├── Form
-│       │   ├── Grid
-│       │   ├── Head
-│       │   ├── **ProtectedRoute** <- # protected routes (HOC)
-│       │   └── Table
-│       ├── index.js
-│       ├── pages             <- # page components
-│       ├── style.css
-│       └── **utils**         <- # front end utils
-│           ├── API.js        <- # coments routes front end api
-│           ├── useLogPath.js <- # custom hook for development - logs current path
-│           └── userAPI.js    <- # user routes front end api
-├────────────────────────── **☝️ client 👇 server**
-├── controllers               <- # routes function
-│   ├── commentsController.js
-│   └── userController.js
-├── models                    <- # Schemas
-│   ├── Comment.js
-│   ├── User.js
-│   └── index.js
-├── routes                    <- # routes (only API routes)
-│   ├── api
-│   │   ├── comments.js
-│   │   ├── index.js
-│   │   └── user.js
-│   └── index.js
-├── utils                     <- # server helper functions 
-│   ├── config.js             <- # global config (put anything you like)
-│   ├── passport.js           <- # passport setup
-│   └── seedDB.js             <- # seed script
-├── package.json
-├── readme.md
-└── server.js                 <- # 🚀 entry point
-```
+   You can track your workouts through the "Dashborad" tab, which can be accessed by clicking the "Dashboard" text at the top left hand corner. 
+   
+   ![Workout Metric Tracking](https://github.com/sabinehutter/Sweat-Workout-Tracker/blob/main/public/images/Sweat-Metrics.png)
+
+   As you track additional workouts,the landing page with update aggregating all your current stats from the active workout.
+
+   ![Workout Summary](https://github.com/sabinehutter/Sweat-Workout-Tracker/blob/main/public/images/Sweat-Workout-Summary.png)
+    
+  ## Hosted Application
+  
+   The application is hosted on Heroku and can be found here https://sweat-workout.herokuapp.com/
+    
+  ## Table of Contents
+  Navigate through the README Using the Table of Contents : 
+
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [License](#license)
+  * [Contributions](#contributing)
+  * [Badges](#badges)
+  * [Tests](#tests)
+  * [Questions](#questions)
+
+  ## Installation
+  To run locally, use the commands below:
+  
+  Installing all the packages the application uses :
+
+    $ npm i
+    
+  Seed the database using : 
+  
+    $ npm run seed
+    
+  Get mongodb database running locally (Run command in another Terminal tab) : 
+  
+    $ mongod
+    
+  To start the application :
+  
+    $ npm run start
+
+  ## Usage
+  This project uses the following frameworks, and packages : 
+  * express
+  * mongodb
+  * mongjs
+  * morgan
+  * javascript
+  * charts.js
+  * html
+  * css 
+
+  ## License
+  MIT
+
+  ## Contributing
+  Please contact me to recieve the detailed contribution guidelines
+
+  ## Badges
+  ![badmath](https://img.shields.io/badge/license-MIT-green)
+  
+
+  ## Tests
+  There are currently no test scripts created for this application :( Happy to collaborate so please reach out!
+  
+  ## Questions
+  [Link to Creator Github](https://github.com/sabinehutter)
+
+  Please forward all questions about the project to [SabineAHutter@gmail.com](SabineAHutter@gmail.com)
+  
