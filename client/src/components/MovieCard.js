@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import API from "../utils/API";
 import Modal from 'react-bootstrap/Modal'
 import { render } from "react-dom";
+import Flippy, { FrontSide, BackSide } from 'react-flippy';
+
 
 
 function MovieCard(props) {
@@ -35,25 +37,58 @@ function MovieCard(props) {
                 </button>
                 </Modal.Body>
             </Modal>
-            <div className="container-fluid">
-                <div className="row">
-                    <div className="col-12 mt-3">
-                        <div className="card">
-                            <div className="card-horizontal">
-                                <div className="img-square-wrapper">
-                                    <img className="" src={props.movie.image} alt={props.movie.title} />
-                                </div>
-                                <div className="card-body">
-                                    <h2>{props.movie.title}</h2>
-                                    <p className="card-text">{state.rating} /5</p>
-                                    <button className="btn btn-warning" style={{ color: "white" }} onClick={handleShow}>Rate</button>
-                                    <props.Button />
-                                </div>
-                            </div>
+            {/* <div className="container-fluid"> */}
+                {/* <div className="row"> */}
+                    {/* <div className="col-md-4"> */}
+                        {/* <div className="card"> */}
+                            {/* <div className="card-horizontal"> */}
+                                {/* <div className="img-square-wrapper"> */}
+                                    {/* <img className="" src={props.movie.image} alt={props.movie.title} /> */}
+                                {/* </div> */}
+                                {/* <div className="card-body"> */}
+                                    {/* <h2>{props.movie.title}</h2> */}
+                                    {/* <p className="card-text">{state.rating} /5</p> */}
+                                    {/* <button className="btn btn-warning" style={{ color: "white" }} onClick={handleShow}>Rate</button> */}
+                                    {/* <props.Button /> */}
+                                {/* </div> */}
+                            {/* </div> */}
+                        {/* </div> */}
+                    {/* </div> */}
+                {/* </div> */}
+            {/* </div> */}
+            <Flippy
+                flipOnHover={false}
+                flipOnClick={true}
+                flipDirection="horizontal"
+                // ref={(r) => this.flippy = r}
+
+                style={{ height: '600px', width: "350px", padding: '10px', float: "none" }} /// these are optional style, it is not necessary
+                >
+                <FrontSide>
+
+                    <div className="img">
+                    <img style={{ width: "100%"}} src={props.movie.image} alt={props.movie.title}/>
+                    </div>
+                    <div className="card-content">
+                    <h3 style={{ textAlign: "center" }}>{props.movie.title}</h3>
+                    </div>
+                </FrontSide>
+                <BackSide>
+                    <div className="card-body" style={{height: "60%"}}>
+                        <div className="card-content">
+                            <h1 style={{ textAlign: "center", color: "rgb(255, 221, 103", fontWeight: "bold" }} >{props.movie.title}</h1>
+                        </div>
+                        <h3 className="card-text" style={{textAlign: "center"}}>{state.rating} / 5</h3>
+                        <div style={{position: "absolute", bottom: "35px", width: "85%", margin: "auto"}}>
+                            <button className="btn btn-warning" style={{ color: "white", width: "45%", margin: "auto"}} onClick={handleShow}>Rate</button>
+                            <props.Button />
                         </div>
                     </div>
-                </div>
-            </div>
+                </BackSide>
+        </Flippy>
+
+
+
         </div>
     )
 }

@@ -42,30 +42,34 @@ class Favorites extends Component {
       
         <Row>
           <div className="col rounded text-center mt-4 mb-4 p-4">
-            <h1 style = {{color : "#FFDD67"}}>Your Favorites Movies</h1>
+            <h1 style = {{color : "#FFDD67", fontWeight: "bold"}}>Your Favorites Movies</h1>
           </div>
         </Row>
-        
-        {this.state.savedMovies.map(movie => {
-          return (
-            <MovieCard 
-              movie={movie} 
-              key={movie.id}
-              Button={() => (
-                <button
-                  onClick={() => this.deleteSavedMovie(movie._id)}
-                  className="btn btn-danger ml-2"
-                >
-                  Delete
-                </button>
-              )}
-              
-              
-              />
-          )
+        <div className="container-fluid" >
+          <div className="row" style={{justifyContent: "center"}}>
+            {this.state.savedMovies.map(movie => {
+              return (
+                <MovieCard 
+                  movie={movie} 
+                  key={movie.id}
+                  Button={() => (
+                    <button
+                      onClick={() => this.deleteSavedMovie(movie._id)}
+                      className="btn btn-danger ml-2"
+                      style={{ color: "white", width: "45%", margin: "auto"}}
+                    >
+                      Remove
+                    </button>
+                  )}
+                  
+                  
+                  />
+              )
 
-          }
-        )}
+              }
+            )}
+          </div>
+        </div>
       </div>
     )
   }
