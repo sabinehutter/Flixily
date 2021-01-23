@@ -56,21 +56,21 @@ class SwipingCard extends Component {
           flipDirection="horizontal"
           ref={(r) => this.flippy = r}
 
-          style={{ height: '30EM', width: '30%', margin: '0 auto', float: "none" }} /// these are optional style, it is not necessary
+          style={{ height: '750px', width: '450px', margin: '0 auto', float: "none" }} /// these are optional style, it is not necessary
         >
           <FrontSide>
 
-            <div className="card-header">
-              <img src={this.state.image} alt="movie"/>
+            <div className="img">
+              <img style={{width: "100%"}} src={this.state.image} alt="movie"/>
             </div>
             <div className="card-content">
-              <h3>{this.state.title}</h3>
+              <h3 style={{textAlign: "center"}}>{this.state.title}</h3>
             </div>
           </FrontSide>
           <BackSide>
             <div className="card-body">
             <div className="card-content">
-              <h3>{this.state.title}</h3>
+              <h3 style={{textAlign: "center"}}>{this.state.title}</h3>
             </div>
               <p className="card-text">{this.state.plot}</p>
 
