@@ -4,27 +4,31 @@
   # Welcome to Flixily!  
 
   ## Description
-   This application allows you to automatically track your cardio and resistance workouts!
+   This application allows you to seamlessly browse a wide selection of movies which you can like or dislike and organize into a collection of favorites.  
 
-   ![Application Entry](https://github.com/sabinehutter/Sweat-Workout-Tracker/blob/main/public/images/Sweat-Landing.png)
+   ![Flixily Logo]()
    
-   Time to get in shape!!
+   Ready, set, ACTION!!
 
-   Whene you first launch the application you will be prompted to enter a "New Workout"
+   After successful login, a user is presented with a randomized movie card with like and dislike buttons.
    
-   ![New Workout](https://github.com/sabinehutter/Sweat-Workout-Tracker/blob/main/public/images/Sweat-New-Exercise.png)
-
-   You can track your workouts through the "Dashborad" tab, which can be accessed by clicking the "Dashboard" text at the top left hand corner. 
+   ![Movie Card](https://github.com/sabinehutter/Flixily/blob/main/moviecard.png)
    
-   ![Workout Metric Tracking](https://github.com/sabinehutter/Sweat-Workout-Tracker/blob/main/public/images/Sweat-Metrics.png)
+   The movie card can be flipped to display a brief synopsis.
+   
+   ![Movie Card2](https://github.com/sabinehutter/Flixily/blob/main/moviecard2.png)
 
-   As you track additional workouts,the landing page with update aggregating all your current stats from the active workout.
+   Users can track the movies they have liked within the favorites page.  Clicking on a movie will flip the card to allow for rating submission or deleting. 
+   
+   ![Favorites](https://github.com/sabinehutter/Flixily/blob/main/favorites.png)
 
-   ![Workout Summary](https://github.com/sabinehutter/Sweat-Workout-Tracker/blob/main/public/images/Sweat-Workout-Summary.png)
+   The user profile page allows the user to view their username and linked email, as well as update the password. 
+
+   ![Profile](https://github.com/sabinehutter/Flixily/blob/main/userprofile.png)
     
   ## Hosted Application
   
-   The application is hosted on Heroku and can be found here https://sweat-workout.herokuapp.com/
+   The application is hosted on Heroku and can be found here https://flixily.herokuapp.com/
     
   ## Table of Contents
   Navigate through the README Using the Table of Contents : 
@@ -58,30 +62,33 @@
 
   ## Usage
   This project uses the following frameworks, and packages : 
+  * React
   * express
   * mongodb
   * mongjs
-  * morgan
   * javascript
-  * charts.js
   * html
   * css 
 
+  ## Development Team
+  [Sabine Hutter](https://github.com/sabinehutter)
+  [Nic Schworer](https://github.com/nicschworer)
+  [Jennifer Morris](https://github.com/jmorris107)
+  [Yerson Arvelo](https://github.com/yarvelo23)
+  
   ## License
   MIT
 
   ## Contributing
-  Please contact me to recieve the detailed contribution guidelines
+  Please contact the development team to recieve the detailed contribution guidelines
 
   ## Badges
   ![badmath](https://img.shields.io/badge/license-MIT-green)
   
-
   ## Tests
   There are currently no test scripts created for this application :( Happy to collaborate so please reach out!
   
   ## Questions
-  [Link to Creator Github](https://github.com/sabinehutter)
-
-  Please forward all questions about the project to [SabineAHutter@gmail.com](SabineAHutter@gmail.com)
+  Please forward all questions about the Flixily to the development team.
+  
   
