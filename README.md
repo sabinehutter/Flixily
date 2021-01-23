@@ -6,7 +6,7 @@
   ## Description
    This application allows you to seamlessly browse a wide selection of movies which you can like or dislike and organize into a collection of favorites.  
 
-   ![Flixily Logo]()
+   ![Flixily Logo](https://github.com/sabinehutter/Flixily/blob/main/logo.png)
    
    Ready, set, ACTION!!
 
